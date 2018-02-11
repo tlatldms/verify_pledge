@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<!--<head>-->
+	<!--	<title>Generic Page - Massively by HTML5 UP</title>-->
+	<!--	<meta charset="utf-8" />-->
+	<!--	<meta name="viewport" content="wih2h=device-wih2h, initial-scale=1, user-scalable=no" />-->
+	<!--	<link rel="stylesheet" href="assets/css/main.css" />-->
+	<!--	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>-->
+	<!--</head>-->
+	<body class="is-loading">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+		
+		<div id="intro">
+			<h1 style=>성균관대학교<br>
+			학생회 공약모음</h1>
+			<p>성균관대학교 학생회의 공약내용을<br>
+			한눈에 확인해보세요.</p>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solo fa-arrow-down scrolly"></a></li>
+			</ul>
+		</div>
+		
+		<header id="header">
+			<a href="<%= pledges_home_path %>" class="logo" style="font-family:Hanna;">성균관대 학생회 공약모음</a>
+		</header>	
+
+		
+		
+	<nav id="nav">
+		<ul class="links">
+		    <!--active클래스주기. application_helper에있음-->
+		    <li class="<%= is_active?([pledges_home_path, root_path]) %>"><a href='<%= pledges_home_path%>'>home</a></li>
+		    <% [17,16,15,14].each do |x| %>
+			<li class="<%= is_active?([send("y#{x}s_index_path"),send("y#{x}s_gun_path"), send("y#{x}s_seo_path"), send("y#{x}s_suw_path"),send("y#{x}s_gunseo_path"),send("y#{x}s_gunsuw_path")]) %>"><a href='<%= send("y#{x}s_index_path") %>'>20<%= x %></a></li>
+			<% end %>
+
+		</ul>
+		<!--<ul class="icons">-->
+		<!--	<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+		<!--	<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
+		<!--	<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>-->
+		<!--	<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>-->
+		<!--</ul>-->
+	</nav>
+	</div>		
+
+				<!-- Main -->
+					<div id="main">
+					<article class="post featured">
+						<!--<ul class="actions">-->
+						<!--	<li><a href='<%= pledges_home_path %>' class="button big">서비스 이름</a></li>-->
+						<!--</ul>-->
+						<!--아니면-->
+						<!--<header class="major">-->
+						<!--			<h1>서비스<br />-->
+						<!--			이름</h1>-->
+						<!--</header>-->
+						<img style='' src="/assets/likelion.png" class='image main2'>
+						<img style='margin-bottom:50px;wih2h:100px;height:100px;' src="/assets/collab.png" class='image main2' align='center'>
+						<img src="/assets/성대신문.jpg" class='image main2'>
+						<h6>본 페이지는 멋쟁이사자처럼 성균관대학교의 팀 프로젝트이며, <br>
+						정치적 견해와 무관합니다.</h6>
+					</article>
+						<!-- Post -->
+						<!--<section class="posts">-->
+						<!--	<article>-->
+						<!--		<header>-->
+									<!--<span class="date">April 24, 2017</span>-->
+						<!--			<h2><a href="#">명륜</a></h2>-->
+						<!--		</header>-->
+						<!--		<a href="<%=y17s_seo_path%>" class="image fit"><img src="/assets/명륜2.jpg" alt="" /></a>-->
+						<!--		<ul class="actions">-->
+						<!--			<li><a href="<%= y17s_seo_path %>" class="button">명륜캠 단과대 공약보기</a></li>-->
+						<!--		</ul>-->
+						<!--	</article>-->
+						<!--	<article>-->
+						<!--		<header>-->
+									<!--<span class="date">April 22, 2017</span>-->
+						<!--			<h2><a href="#">율전</a></h2>-->
+						<!--		</header>-->
+						<!--		<a href="<%=y17s_suw_path%>" class="image fit"><img src="/assets/수원2.jpg" /></a>-->
+						<!--		<ul class="actions">-->
+						<!--			<li><a href="<%= y17s_suw_path %>" class="button">율전캠 단과대 공약보기</a></li>-->
+						<!--		</ul>-->
+						<!--	</article>-->
+						<!--</section>-->
+					<div>
+
+						<p style='font-family:hanna;'>성균관대학교의 2014년 ~ 2017년까지의 총학생회, 단과대 학생회가 어떤 공약을 내걸었는지, <br>
+						얼마나 시행했는지를 확인합니다.<br>
+						성대신문의 평가 기사를 활용했으며,
+						모든 페이지에는 성대신문 url 출처가 연결되어 있습니다.<br>
+						웹페이지 제작자의 주관은 반영하지 않았습니다.<br>
+						
+						
+						<strong>진짜야 믿어줘</strong></p>
+						<!--<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.-->
+						<!--			This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.-->
+						<!--			This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>.-->
+						<!--			Finally, this is a <a href="#">link</a>.</p>-->
+					
+					</div>
+					<div>
+						<center><h2>공약 이행여부<br>선정 기준</h2></center>
+						<center><h6>성대신문 기사의 내용을 바탕으로 선정하였습니다.</h6></center>
+						<p>
+							<dl>
+								<h2>O</h2>
+								<dd><p style='font-family:hanna;'>공약을 제대로 시행한 경우</p> </dd>
+								<h2>X</h2>
+								<dd><p style='font-family:hanna;'>공약을 시행하지 못한 경우 <br> 성대신문에 공약을 이행하지 못한 이유가 있을 경우 Detail에 최대한 언급했습니다.</p></dd>
+								<h2>-</h2>
+								<dd><p style='font-family:hanna;'>기사를 쓴 시점에서 이행 여부를 확인할 수 없는 경우 <br> 다음 학기 이행 예정이거나, 행사가 기사 작성 시점 이후로 예정된 경우에 보통 해당합니다.</p></dd>
+								
+								<h2>△</h2>
+								<dd><p style='font-family:hanna;'>원래 공약과 다른 방식으로 대체이행 했거나, 공약을 마무리하지 못한 경우</p></dd>
+						</p>
+						<hr />
+					</div>
+						
+					</div>
+			</div>
+	</body>
+</html>

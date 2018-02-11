@@ -1,0 +1,80 @@
+<body class="is-loading">
+	<div id="wrapper" class="fade-in">
+		<div id="main">
+			<center><ul class="actions">
+				<span class="date">< 출 처 링 크 ></span><br>
+				<li><a href='http://www.skkuw.com/news/articleView.html?idxno=13354' class="button special"  target="_blank">공통</a></li>
+				<li><a href='http://www.skkuw.com/news/articleView.html?idxno=13353' class="button special"  target="_blank">인사캠</a></li>
+				<li><a href='http://www.skkuw.com/news/articleView.html?idxno=13350' class="button special"  target="_blank">자과캠</a></li>
+				<br>
+				<br>
+				<h6>성대신문 작성 시점인 2016.11.03일 기준입니다.</h6>
+				<h6></h6>
+			</ul></center>
+		    <div class="row">
+				<div class="6u 12u$(small)">
+					<div class="table-wrapper">
+					<center>
+							<a href="<%= y17s_gunseo_path %>" class="button actions">인사캠</a> 
+							<a href="<%= y17s_gunseo_path %>" class="button actions">자과캠</a>
+					</center>
+					<% @years.each do |year| %>
+						<% if year.name == 2017 %>
+								<% year.locations.each do |l1| %>
+									<%if l1.name=='공통'%>
+										<h3>공통   </h3>
+										
+										<% l1.categories.each do |ct| %>
+										<h4><%=ct.name%> </h4>
+										<h6></h6>
+										<table class="table">
+											<thead class="thead-light">
+												<tr>
+													 <th scope="col">#</th>
+													 <th scope="col">공약</th>
+													 <th scope="col">시행여부</th>
+													 <th scope="col">Detail</th>
+												</tr>
+											</thead>
+											<% i=1%>
+										<% ct.contents.each_slice(2) do |slice1, slice2| %>
+													  <tbody>
+													    <tr>
+													      <th scope="row"><%=i%></th>
+													      <td><%=slice1.name%></td>
+													      <td><%=slice1.enforce%></td>
+													      <td><% if slice1.detail %><%=slice1.detail %><% end%></td>
+													    </tr>
+													    <%i+=1%>
+													    <% if slice2%>
+														<tr>
+													      <th scope="row"><%=i%></th>
+													      <td><%=slice2.name%></td>
+													      <td><%=slice2.enforce%></td>
+													      <td><% if slice2.detail %><%=slice2.detail %><% end%></td>
+													    </tr>
+													    <%i+=1%>
+													  <%end%>
+												
+											<%end%>
+											</tbody>
+											</table>
+											<hr>
+									
+										
+										<%end%>
+									<%end%>
+								<%end%>
+							<%end%>
+						<% end%>
+			
+				
+				    	
+        
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	

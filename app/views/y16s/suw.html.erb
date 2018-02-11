@@ -1,0 +1,78 @@
+<body class="is-loading">
+	<div id="wrapper" class="fade-in">
+		<div id="main">
+			<center>
+				<ul class="actions">
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12684' class="button special"  target="_blank">동아리연합회</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12683' class="button special"  target="_blank">정보통신대학</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12682' class="button special"  target="_blank">생명공학대학부</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12681' class="button special"  target="_blank">자연과학대학</a></li>
+					<br>
+					<br>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12680' class="button special"  target="_blank">약학대학</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12650' class="button special"  target="_blank">총졸업준비학생회</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12649' class="button special"  target="_blank">공과대학</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12648' class="button special"  target="_blank">스포츠과학대학</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12647' class="button special"  target="_blank">건축학과</a></li>
+					<li><a href='http://www.skkuw.com/news/articleView.html?idxno=12646' class="button special"  target="_blank">의과대학</a></li>		
+					<br>
+					<br>
+					<h6>성대신문 작성 시점인 2016.09.04일 / 2016.09.11일 기준입니다.</h6>
+				</ul>
+			</center>
+		    <div class="row">
+				<div class="6u 12u$(small)">
+					<div class="table-wrapper">
+					<% @years.each do |year| %>
+						<% if year.name == 2016 %>
+							<% year.location2s.each do |l2| %>
+								<% if l2.name == '자과캠'%>
+									<% l2.category2s.each do |c2|%>
+										<h2><%=c2.name%> : <%=c2.title%></h2>
+										<table class="alt">
+											<thead class="thead-light">
+												<tr>
+													 <th scope="col">#</th>
+													 <th scope="col">공약</th>
+													 <th scope="col">시행여부</th>
+													 <th scope="col">Detail</th>
+												</tr>
+											</thead>
+											<% i=1%>
+										<% c2.content2s.each_slice(2) do |slice1, slice2| %>
+													  <tbody>
+													    <tr>
+													      <th scope="row"><%=i%></th>
+													      <td><%=slice1.name%></td>
+													      <td><%=slice1.enforce%></td>
+													      <td><% if slice1.detail %><%=slice1.detail %><% end%></td>
+													    </tr>
+													    <%i+=1%>
+													    <% if slice2%>
+														<tr>
+													      <th scope="row"><%=i%></th>
+													      <td><%=slice2.name%></td>
+													      <td><%=slice2.enforce%></td>
+													      <td><% if slice2.detail %><%=slice2.detail %><% end%></td>
+													    </tr>
+													    <%i+=1%>
+													  <%end%>
+												
+											<%end%>
+											</tbody>
+											</table>
+										<br>
+										<%end%>
+								<%end%>
+							<%end%>
+						<% end%>
+					<%end%>
+					
+				    	
+        
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
